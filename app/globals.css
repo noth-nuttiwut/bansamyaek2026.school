@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+body {
+    font-family: "Anuphan", sans-serif;
+    background-color: #fffdf9; /* ขาวนวลสว่างขึ้น */
+}
+/* สีสดใสแต่สุภาพ */
+.text-brand-primary {
+    color: #d97706;
+} /* Orange-Amber สดใส */
+.bg-brand-primary {
+    background-color: #d97706;
+}
+.text-gold-deep {
+    color: #92400e;
+} /* Gold-Brown สุภาพ */
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2rem;
+}
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slider-item {
+    flex: 0 0 100%;
+}
+
+.glass-nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}

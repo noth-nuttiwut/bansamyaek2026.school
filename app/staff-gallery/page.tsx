@@ -1,0 +1,32 @@
+import Image from 'next/image';
+import StaffGalleryImage from "@/public/BoardOfDirectors.jpg"
+
+export default function StaffGallery() {
+  return (
+    <section className="py-20 bg-[#FDFBF7]">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-4">ทำเนียบบุคลากร</h2>
+          <p className="text-orange-600 font-bold tracking-[0.2em] uppercase text-sm">Staff of Bansamyeak School</p>
+          <div className="w-24 h-1.5 bg-orange-500 rounded-full mx-auto mt-6"></div>
+        </div>
+
+        {/* 📸 ส่วนแสดงภาพรวม */}
+        <div className="relative group overflow-hidden rounded-[3rem] shadow-2xl border-[12px] border-white bg-white">
+          <Image
+            src={StaffGalleryImage}
+            alt="All Staff"
+            width={1470}
+            height={800}
+            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          {/* Overlay ตกแต่งจางๆ */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-12">
+            <p className="text-white text-2xl font-bold italic">"ร่วมแรง ร่วมใจ เพื่ออนาคตของศิษย์ บ้านสามแยก"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
