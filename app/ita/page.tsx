@@ -1,4 +1,4 @@
-import { getItaData } from '@/libs/getItaData';
+import { getItaData } from '@/libs/getGoogleDriveData';
 import Image from 'next/image';
 import ItaSearchFilter from '@/components/GeminiGen/Ita/GetItaSearchFilter';
 import ITAbanner from '@/public/Banner-ITA.jpg';

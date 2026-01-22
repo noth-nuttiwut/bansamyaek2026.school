@@ -33,9 +33,12 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
             index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          <img
+          <Image
             src={img.src}
             alt={img.alt}
+            width={2048}
+            height={1080}
+            referrerPolicy="no-referrer"
             className={`object-cover object-center transition-transform duration-[6000ms] ease-out ${
               index === currentIndex ? "scale-110" : "scale-100"
             }`}
@@ -53,9 +56,9 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
               <Calendar size={18} />
               <span>{images[currentIndex].date}</span>
             </div>
-            <h2 className="text-4xl lg:text-7xl font-black text-white leading-tight max-w-4xl drop-shadow-2xl">
+            {/*<h2 className="text-4xl lg:text-7xl font-black text-white leading-tight max-w-4xl drop-shadow-2xl">
               {images[currentIndex].title}
-            </h2>
+            </h2>*/}
             {/*<div className="flex items-center gap-6 mt-4">
               <button className="px-8 py-4 bg-orange-600 text-white rounded-2xl font-black flex items-center gap-3 hover:bg-orange-700 transition-all shadow-xl shadow-orange-900/20">
                 <Info size={20} />

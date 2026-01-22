@@ -4,6 +4,12 @@ export interface ITAFile {
   url: string;
 }
 
+export interface ImageInfo {
+  id: string;
+  alt: string;
+  src: string;
+}
+
 export interface ITAGroup {
   folder_name: string; // เช่น "O1", "O25"
   files: ITAFile[];

@@ -33,7 +33,9 @@ export const transformItaToHero = (files: ITAFile[]) => {
     const fileId = file.url.match(/[-\w]{25,}/); 
     
     // ใช้ URL รูปแบบที่เสถียรที่สุดสำหรับ Google Drive
-    const directUrl = fileId ? `https://drive.google.com/uc?export=view&id=${fileId[0]}` : file.url;
+    // const directUrl = fileId ? `https://drive.google.com/uc?export=view&id=${fileId[0]}` : file.url;
+    // 
+    const directUrl = fileId ? `https://lh3.googleusercontent.com/u/0/d/${fileId[0]}` : file.url;
     
     return {
       src: directUrl,

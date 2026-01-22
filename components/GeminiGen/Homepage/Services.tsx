@@ -41,7 +41,6 @@ const QuickServices = () => {
               key={idx} 
               href={service.link}
               target="_blank"
-              rel="noopener noreferrer"
               className={`group relative bg-white p-8 rounded-[2.5rem] border border-stone-100 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${service.color}`}
             >
               <div className="flex flex-col items-center">

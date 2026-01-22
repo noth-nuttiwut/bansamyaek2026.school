@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const NewHeroComponent = () => {
   return (
-    <div className="bg-orange-50">
+    <div className="bg-slate-50">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-400 to-amber-700">
+      <section className="relative h-[550px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-amber-800 via-orange-600 to-orange-300">
         <div className="absolute inset-0 opacity-30">
           {" "}
           {/* ปรับ opacity ของรูปภาพลงเล็กน้อย */}
@@ -19,7 +19,7 @@ const NewHeroComponent = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl">
-          <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider text-amber-100 uppercase bg-black/20 rounded-full backdrop-blur-sm border border-white/20">
+          <span className="inline-block px-4 py-1.5 mb-6 text-md font-medium tracking-wider text-amber-100 uppercase bg-black/20 rounded-full backdrop-blur-sm border border-white/20">
             ยินดีต้อนรับสู่รั้วบ้านสามแยก
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">

@@ -1,4 +1,4 @@
-import { getItaData } from '@/libs/getItaData';
+import { getItaData } from '@/libs/getGoogleDriveData';
 import { getItaTitle } from '@/libs/constants';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
