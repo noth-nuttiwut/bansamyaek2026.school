@@ -5,7 +5,7 @@ const NewHeroComponent = () => {
   return (
     <div className="bg-slate-50">
       {/* Hero Section */}
-      <section className="relative h-[550px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-amber-800 via-orange-600 to-orange-300">
+      <section className="relative h-[550px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-orange-700 to-amber-200">
         <div className="absolute inset-0 opacity-30">
           {" "}
           {/* ปรับ opacity ของรูปภาพลงเล็กน้อย */}
@@ -32,9 +32,11 @@ const NewHeroComponent = () => {
             เพื่อเติบโตเป็นประชากรที่มีคุณภาพของสังคม
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-3 bg-white hover:bg-amber-50 text-orange-700 rounded-xl font-medium transition-all shadow-xl shadow-amber-900/25 flex items-center gap-2">
-              อ่านข่าวประชาสัมพันธ์ <ArrowRight size={18} />
-            </button>
+            <Link href="/ita/O7">
+              <button className="px-8 py-3 bg-white hover:bg-amber-50 text-orange-700 rounded-xl font-medium transition-all shadow-xl shadow-amber-900/25 flex items-center gap-2">
+                อ่านข่าวประชาสัมพันธ์ <ArrowRight size={18} />
+              </button>
+            </Link>
             <Link href="/about">
               <button className="px-8 py-3 bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md rounded-xl font-medium transition-all">
                 เกี่ยวกับเรา

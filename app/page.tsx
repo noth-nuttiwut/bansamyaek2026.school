@@ -1,4 +1,3 @@
-// import Hero from '@/components/GeminiGen/Homepage/Hero';
 import Director from '@/components/GeminiGen/Homepage/Director';
 import Departments from '@/components/GeminiGen/Homepage/Departments';
 import Activities from '@/components/GeminiGen/Homepage/Activity';
@@ -10,7 +9,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#FFFDF9]">
       <Activities />
-      {/*<Hero />*/}
       <NewHero />
       <Director />
       <Departments />

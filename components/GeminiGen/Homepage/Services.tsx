@@ -4,7 +4,7 @@ import { SITE_CONFIG } from '@/libs/siteConfig';
 
 const services = [
   { 
-    title: "FB: bansamyeak", 
+    title: "FB: bansamyaek", 
     desc: "ติดตามข่าวสารผ่าน Facebook", 
     icon: <Facebook className="w-8 h-8 text-blue-600" />,
     link: SITE_CONFIG.social.facebook,

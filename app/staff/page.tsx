@@ -1,6 +1,6 @@
 // components/DepartmentStaff.tsx
 import { User, ShieldCheck, Users } from 'lucide-react';
-
+import { getAllStaffImages } from '@/libs/getGoogleDriveData';
 const deptsInfo = [
   { 
     name: "งานวิชาการ", 
@@ -71,7 +71,16 @@ const deptsInfo = [
   },
 ];
 
-export default function DepartmentStaff() {
+export default async function DepartmentStaff() {
+  
+  const staffs = await getAllStaffImages();
+  
+  if (!staffs) {
+    return <div>Loading...</div>;
+  }
+  
+  console.log(staffs);
+  
   return (
     <section className="py-24 max-w-7xl mx-auto px-6 space-y-20">
       {deptsInfo.map((dept, idx) => (

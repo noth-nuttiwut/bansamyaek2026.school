@@ -24,7 +24,7 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
   };
 
   return (
-    <section className="relative w-full h-[600px] lg:h-[800px] overflow-hidden bg-orange-50">
+    <section className="relative w-full h-[40vh] lg:h-[50vh] overflow-hidden bg-gradient-to-b from-orange-50 to-orange-100">
       {/* 🖼️ ภาพพื้นหลัง (Main Image) */}
       {images.map((img, index) => (
         <div
@@ -36,12 +36,12 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
           <Image
             src={img.src}
             alt={img.alt}
-            width={2048}
-            height={1080}
+            fill={true}
+            sizes="100vw"
             referrerPolicy="no-referrer"
-            className={`object-cover object-center transition-transform duration-[6000ms] ease-out ${
-              index === currentIndex ? "scale-110" : "scale-100"
-            }`}
+            className={`object-contain transition-transform duration-[6000ms] ease-out 
+                  ${index === currentIndex ? "scale-100" : "scale-110"}
+                  bg-black/10 object-center`}
           />
           {/* Overlay ป้องกันภาพจ้าและทำให้ข้อความชัด */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -56,6 +56,7 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
               <Calendar size={18} />
               <span>{images[currentIndex].date}</span>
             </div>
+            
             {/*<h2 className="text-4xl lg:text-7xl font-black text-white leading-tight max-w-4xl drop-shadow-2xl">
               {images[currentIndex].title}
             </h2>*/}

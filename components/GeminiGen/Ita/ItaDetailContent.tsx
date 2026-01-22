@@ -1,7 +1,7 @@
 // 💡 แนวทาง: ใช้ 'use client' เฉพาะใน Component ที่ต้องคลิก
 "use client";
 import { useState } from 'react';
-
+import { cleanFileName } from '@/libs/utils';
 export default function ItaDetailContent({ group }: { group: any }) {
   // เก็บสถานะไฟล์ที่เลือกดู (เริ่มต้นที่ไฟล์แรก)
   const [selectedFile, setSelectedFile] = useState(group.files[0]);
@@ -9,7 +9,7 @@ export default function ItaDetailContent({ group }: { group: any }) {
   return (
     <div className="flex flex-col lg:flex-row gap-8">
       {/* ฝั่งซ้าย: เมนูเลือกไฟล์ (รวดเร็วมากเพราะเป็น Client State) */}
-      <div className="lg:w-1/3 space-y-3">
+      <div className="lg:w-1/3 space-y-3 h-[50vh] overflow-y-auto">
         {group.files.reverse().map((file: any, index: number) => (
           <button 
             key={"fpreview_" + index + file.name}
@@ -20,7 +20,7 @@ export default function ItaDetailContent({ group }: { group: any }) {
               : "bg-white hover:bg-orange-50"
             }`}
           >
-            <p className="font-bold text-sm">{file.file_name}</p>
+            <p className="font-bold text-sm">{cleanFileName(file.file_name)}</p>
           </button>
         ))}
       </div>

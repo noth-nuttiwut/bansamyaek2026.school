@@ -55,7 +55,7 @@ export default async function ItaDetailPage({ params }: { params: { id: string }
   const title = getItaTitle(id);
 
   return (
-    <main className="min-h-screen bg-[#FDFBF7] pb-32">
+    <main className="min-h-[85vh] bg-[#FDFBF7] pb-16">
       {/* 🚩 Banner ส่วนหัวแบบ Full Width */}
       {/*<div className="w-full bg-[#8B0000] flex justify-center overflow-hidden shadow-lg">
         <img 
@@ -84,6 +84,7 @@ export default async function ItaDetailPage({ params }: { params: { id: string }
         
         
         <ItaDetailContent group={group} />
+        
         {/*  📄 แสดงผลไฟล์ตามกลุ่มย่อย (Sub-groups) 
          <div className="space-y-16">
           {Object.entries(filesBySubGroup).map(([subName, files], idx) => (

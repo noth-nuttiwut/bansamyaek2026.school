@@ -5,9 +5,22 @@ export interface ITAFile {
 }
 
 export interface ImageInfo {
+  name: string;
+  url: string;
+}
+
+
+export interface ElearningVideo {
   id: string;
-  alt: string;
-  src: string;
+  name: string;
+  description: string;
+  url: string;
+}
+
+
+export interface ElearningSubject {
+  subject: string; // ไทย คณิตศาสตร์
+  videos: ElearningVideo[];
 }
 
 export interface ITAGroup {

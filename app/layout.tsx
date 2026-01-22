@@ -6,7 +6,7 @@ import Header from '@/components/GeminiGen/Header'
 import Footer from '@/components/GeminiGen/Footer'
 
 export const metadata: Metadata = {
-  title: 'โรงเรียนบ้านสามแยก | Bansamyeak School',
+  title: 'โรงเรียนบ้านสามแยก | Bansamyaek School',
   description: '40 หมู่ 5 ตำบล ท่าบุญมี อำเภอ เกาะจันทร์ จังหวัด ชลบุรี 20240 เขตพื้นที่การศึกษา ที่ 2',
   icons: {
     icon: '/favicon.ico',

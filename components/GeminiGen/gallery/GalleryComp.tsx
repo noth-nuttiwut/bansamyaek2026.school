@@ -2,6 +2,7 @@
 import React, { useState, useMemo } from 'react';
 import { ImageIcon, FolderOpen, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Image from 'next/image';
+import { getDisplayUrl } from '@/libs/utils';
 
 interface GalleryFile {
   file_name: string;
@@ -32,12 +33,6 @@ export default function GalleryComp({ folderData }: GalleryProps) {
   
   const [activeFolder, setActiveFolder] = useState(folderData[0].folder_name);
   const [selectedImage, setSelectedImage] = useState<SelectedImage | null>(null);
-  
-  // ฟังก์ชันแปลง URL Google Drive ให้แสดงผลได้ (ใช้เทคนิค no-referrer)
-  const getDisplayUrl = (url : string) => {
-    const fileId = url.match(/[-\w]{25,}/);
-    return fileId ? `https://lh3.googleusercontent.com/u/0/d/${fileId[0]}` : url;
-  };
   
   // กรองไฟล์ตามโฟลเดอร์ที่เลือก
   const currentFiles = useMemo(() => {

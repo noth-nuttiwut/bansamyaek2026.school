@@ -40,6 +40,7 @@ h1, h2, h3, .font-kanit {
     backdrop-filter: blur(10px);
 }
 
+
 .scroll-hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
