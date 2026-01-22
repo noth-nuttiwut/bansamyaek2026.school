@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
+
+
 body {
-    font-family: "Anuphan", sans-serif;
-    background-color: #fffdf9; /* ขาวนวลสว่างขึ้น */
+  font-family: 'Sarabun', sans-serif;
 }
+
+h1, h2, h3, .font-kanit {
+  font-family: 'Kanit', sans-serif;
+}
+
 /* สีสดใสแต่สุภาพ */
 .text-brand-primary {
     color: #d97706;

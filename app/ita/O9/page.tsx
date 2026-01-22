@@ -1,13 +1,13 @@
 import { MapPin, Phone, Mail, Facebook, Youtube, Share2, Globe } from 'lucide-react';
 import Link from 'next/link';
-
+import { SITE_CONFIG } from '@/libs/siteConfig';
 
 export default function O9Page() {
   // ไอเดียดีไซน์สำหรับ O9
   const socialChannels = [
-    { name: 'FB บ้านสามแยก',　url: 'https://www.facebook.com/bansamyeak', color: 'bg-[#1877F2]', icon: 'f', desc: 'ติดตามข่าวสารและกิจกรรมรายวัน' },
-    { name: 'YouTube',　url: 'https://www.youtube.com/@SamyarkSchool', color: 'bg-[#FF0000]', icon: 'y', desc: 'ชมวิดีโอกิจกรรมและการเรียนการสอน' },
-    { name: 'FB สพป.ชลบุรี เขต2',　url: 'https://www.facebook.com/profile.php?id=100076660265075', color: 'bg-[#1877F2]', icon: 'f', desc: 'ติดตามข่าวสารและกิจกรรมรายวัน' },
+    { name: 'FB บ้านสามแยก',　url: SITE_CONFIG.social.facebook, color: 'bg-[#1877F2]', icon: 'f', desc: 'ติดตามข่าวสารและกิจกรรมรายวัน' },
+    { name: 'YouTube',　url: SITE_CONFIG.social.youtube, color: 'bg-[#FF0000]', icon: 'y', desc: 'ชมวิดีโอกิจกรรมและการเรียนการสอน' },
+    { name: 'FB สพป.ชลบุรี เขต2',　url: SITE_CONFIG.social.fbChon2, color: 'bg-[#1877F2]', icon: 'f', desc: 'ติดตามข่าวสารและกิจกรรมรายวัน' },
   ];
   return (
     <main className="min-h-[60vh] bg-[#FDFBF7]">

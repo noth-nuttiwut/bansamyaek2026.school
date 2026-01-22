@@ -56,12 +56,12 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
             <h2 className="text-4xl lg:text-7xl font-black text-white leading-tight max-w-4xl drop-shadow-2xl">
               {images[currentIndex].title}
             </h2>
-            <div className="flex items-center gap-6 mt-4">
+            {/*<div className="flex items-center gap-6 mt-4">
               <button className="px-8 py-4 bg-orange-600 text-white rounded-2xl font-black flex items-center gap-3 hover:bg-orange-700 transition-all shadow-xl shadow-orange-900/20">
                 <Info size={20} />
                 ดูรายละเอียดกิจกรรม
               </button>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

@@ -10,9 +10,10 @@ const departments = [
 export default function Departments() {
   return (
     <section className="py-24 max-w-7xl mx-auto px-6">
-      <h3 className="text-4xl font-extrabold text-center mb-16 text-gray-900 tracking-tight">
-        โครงสร้างการบริหารงาน
-      </h3>
+      <div className="text-center mb-16">
+        <h2 className="text-3xl font-bold text-slate-900 mb-4">โครงสร้างการบริหารงาน</h2>
+        <div className="h-1.5 w-20 bg-orange-600 mx-auto rounded-full"></div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {departments.map((dept, idx) => (
           <Link href={dept.url} key={"slink_"+idx}>

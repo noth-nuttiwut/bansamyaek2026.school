@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SITE_CONFIG } from '@/libs/siteConfig';
 
 export default function Footer(){
   return (
@@ -10,8 +11,8 @@ export default function Footer(){
             จัดการศึกษาอย่างมีคุณภาพ พัฒนาผู้เรียนตามมาตรฐานสากล บนพื้นฐานความเป็นไทย
           </p>
           <div className="flex gap-4">
-            <Link href="https://www.facebook.com/bansamyaek.school" target="_blank"><div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-600 transition cursor-pointer">FB</div></Link>
-            <Link href="https://www.youtube.com/@SamyarkSchool" target="_blank"><div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-600 transition cursor-pointer">YT</div></Link>
+            <Link href={SITE_CONFIG.social.facebook} target="_blank"><div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-600 transition cursor-pointer">FB</div></Link>
+            <Link href={SITE_CONFIG.social.youtube} target="_blank"><div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-600 transition cursor-pointer">YT</div></Link>
           </div>
         </div>
         <div>
@@ -25,9 +26,11 @@ export default function Footer(){
         <div>
             <h4 className="text-white font-bold mb-8 uppercase text-orange-500"> E-Service </h4>
             <ul className="space-y-4 text-sm">
-                <li><Link target="_blank" href="https://www.chon2.go.th/news/" className="hover:text-orange-500 transition">สำนักงานเขตพื้นที่การศึกษาประถมศึกษา ชลบุรี เขต 2</Link></li>
-                <li><Link target="_blank" href="https://amss.chon2.go.th/" className="hover:text-orange-500 transition">AMSS++</Link></li>
-                <li><Link target="_blank" href="https://chon2.ksom2.net/money/index_desktop.php" className="hover:text-orange-500 transition">E-Money</Link></li>
+                <li><Link target="_blank" href={SITE_CONFIG.social.chon2} className="hover:text-orange-500 transition">สำนักงานเขตพื้นที่การศึกษาประถมศึกษา ชลบุรี เขต 2</Link></li>
+                <li><Link target="_blank" href={SITE_CONFIG.social.amss} className="hover:text-orange-500 transition">AMSS++</Link></li>
+                <li><Link target="_blank" href={SITE_CONFIG.social.emoney} className="hover:text-orange-500 transition">E-Money</Link></li>
+                <li><Link href="/e-learning" className="hover:text-orange-500 transition">E-Leaning</Link></li>
+
             </ul>
         </div>
       </div>

@@ -1,14 +1,9 @@
 import { MapPin, Phone, Mail, Facebook, Youtube, Share2, Globe } from 'lucide-react';
 import Link from 'next/link';
+import { SITE_CONFIG } from '@/libs/siteConfig';
 
 
 export default function O18Page() {
-  // ไอเดียดีไซน์สำหรับ O9
-  const socialChannels = [
-    { name: 'FB บ้านสามแยก',　url: 'https://www.facebook.com/bansamyeak', color: 'bg-[#1877F2]', icon: 'f', desc: 'ติดตามข่าวสารและกิจกรรมรายวัน' },
-    { name: 'YouTube',　url: 'https://www.youtube.com/@SamyarkSchool', color: 'bg-[#FF0000]', icon: 'y', desc: 'ชมวิดีโอกิจกรรมและการเรียนการสอน' },
-    { name: 'FB สพป.ชลบุรี เขต2',　url: 'https://www.facebook.com/profile.php?id=100076660265075', color: 'bg-[#1877F2]', icon: 'f', desc: 'ติดตามข่าวสารและกิจกรรมรายวัน' },
-  ];
   return (
     <main className="min-h-[60vh] bg-[#FDFBF7]">
       <div className="max-w-5xl mx-auto px-6 mt-12">
@@ -40,9 +35,9 @@ export default function O18Page() {
       
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
-            { title: 'AMSS++', desc: 'ระบบสนับสนุนการบริหารจัดการสำนักงานเขตพื้นที่การศึกษา', icon: '📊', color: 'bg-blue-500' },
-            { title: 'E-Money', desc: 'ระบบ E-Money', icon: '📝', color: 'bg-emerald-500' },
-            { title: 'E-Learning', desc: 'ระบบการเรียนการสอนออนไลน์', icon: '📜', color: 'bg-amber-500' },
+            { title: 'AMSS++', desc: 'ระบบสนับสนุนการบริหารจัดการสำนักงานเขตพื้นที่การศึกษา', icon: '📊', color: 'bg-blue-500', url: SITE_CONFIG.social.amss},
+            { title: 'E-Money', desc: 'ระบบ E-Money', icon: '📝', color: 'bg-emerald-500', url: SITE_CONFIG.social.emoney},
+            { title: 'E-Learning', desc: 'ระบบการเรียนการสอนออนไลน์', icon: '📜', color: 'bg-amber-500', url: "/e-learning"},
           ].map((service, idx) => (
             <div key={idx} className="group bg-white p-8 rounded-[2.5rem] border border-stone-100 hover:border-orange-500 hover:shadow-2xl transition-all flex items-center gap-6">
               <div className={`w-16 h-16 ${service.color} text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg`}>
@@ -52,7 +47,7 @@ export default function O18Page() {
                 <h4 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">{service.title}</h4>
                 <p className="text-sm text-gray-500">{service.desc}</p>
               </div>
-              <div className="text-orange-600 font-black opacity-0 group-hover:opacity-100 transition-opacity">➔</div>
+              <Link href={service.url}><div className="text-orange-600 font-black opacity-0 group-hover:opacity-100 transition-opacity">➔</div></Link>
             </div>
           ))}
         </div>

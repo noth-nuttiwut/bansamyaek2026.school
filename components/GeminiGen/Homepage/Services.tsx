@@ -1,12 +1,13 @@
 import { Facebook, Camera, Newspaper, Globe, Mail, Monitor } from 'lucide-react';
 import Link from 'next/link';
+import { SITE_CONFIG } from '@/libs/siteConfig';
 
 const services = [
   { 
     title: "FB: bansamyeak", 
     desc: "ติดตามข่าวสารผ่าน Facebook", 
     icon: <Facebook className="w-8 h-8 text-blue-600" />,
-    link: "https://www.facebook.com/bansamyaek.school",
+    link: SITE_CONFIG.social.facebook,
     color: "hover:border-blue-200"
   },
   { 
