@@ -38,6 +38,14 @@ export async function getItaData(): Promise<ITAGroup[]> {
           "folder_name": "O9",
           "files": []
         },
+        {
+          "folder_name": "O18",
+          "files": []
+        },
+        {
+          "folder_name": "O28",
+          "files": []
+        },
     )
       
     // เรียงลำดับข้อมูลตามรหัส Ox (O1, O2, O3...) เพื่อให้แสดงผลเป็นระเบียบ
