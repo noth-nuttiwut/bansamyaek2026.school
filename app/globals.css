@@ -33,3 +33,12 @@ body {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
 }
+
+.scroll-hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

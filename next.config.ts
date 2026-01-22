@@ -18,8 +18,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'drive.google.com',
-        port: '',
-        pathname: '/**', // อนุญาตทุก Path ภายใต้ Domain นี้
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
       },
     ],
   },

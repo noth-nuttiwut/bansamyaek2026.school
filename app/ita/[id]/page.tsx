@@ -2,6 +2,7 @@ import { getItaData } from '@/libs/getItaData';
 import { getItaTitle } from '@/libs/constants';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import ItaDetailContent from '@/components/GeminiGen/Ita/ItaDetailContent';
 
 // 1. กำหนดการสร้างหน้า Static ไว้ล่วงหน้า (SSG)
 export async function generateStaticParams() {
@@ -10,6 +11,23 @@ export async function generateStaticParams() {
     id: item.folder_name,
   }));
 }
+
+import { Metadata } from 'next';
+
+// ฟังก์ชันสำหรับสร้าง Metadata ตามรหัส O
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const { id } = await params;
+  const title = getItaTitle(id);
+  
+  return {
+    title: `${id} ${title} | ITA โรงเรียนบ้านสามแยก เกาะจันทร์`,
+    description: `แบบตรวจการเปิดเผยข้อมูลสาธารณะ (OIT) หัวข้อ ${id} ${title} ของโรงเรียนบ้านสามแยก เกาะจันทร์`,
+    openGraph: {
+      images: [`@/public/ITABanner/B-${id}.jpg`], // ใช้ภาพ Banner ของแต่ละข้อเป็นรูป Preview เวลาแชร์
+    },
+  };
+}
+
 
 export default async function ItaDetailPage({ params }: { params: { id: string } }) {
 
@@ -54,7 +72,7 @@ export default async function ItaDetailPage({ params }: { params: { id: string }
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-600 text-white rounded-xl text-sm font-black mb-4 shadow-lg shadow-orange-200">
               {id}
             </div>
-            <h1 className="text-3xl lg:text-5xl font-black text-gray-900 leading-tight">
+            <h1 className="text-3xl lg:text-4xl font-black text-gray-900 leading-tight">
               {title}
             </h1>
           </div>
@@ -63,11 +81,14 @@ export default async function ItaDetailPage({ params }: { params: { id: string }
           </Link>
         </div>
 
-        {/* 📄 แสดงผลไฟล์ตามกลุ่มย่อย (Sub-groups) */}
-        <div className="space-y-16">
+        
+        
+        <ItaDetailContent group={group} />
+        {/*  📄 แสดงผลไฟล์ตามกลุ่มย่อย (Sub-groups) 
+         <div className="space-y-16">
           {Object.entries(filesBySubGroup).map(([subName, files], idx) => (
             <section key={idx} className="space-y-8">
-              {/* ชื่อกลุ่มย่อย (ถ้ามีหลายกลุ่ม) */}
+              // ชื่อกลุ่มย่อย (ถ้ามีหลายกลุ่ม) 
               {Object.keys(filesBySubGroup).length > 1 && (
                 <div className="flex items-center gap-3">
                   <span className="w-2 h-8 bg-orange-500 rounded-full"></span>
@@ -95,7 +116,7 @@ export default async function ItaDetailPage({ params }: { params: { id: string }
                       </a>
                     </div>
 
-                    {/* PDF Previewer */}
+                    // PDF Previewer 
                     <div className="relative w-full pt-[141.42%] rounded-[2rem] overflow-hidden border border-stone-200 bg-stone-50 shadow-inner">
                       <iframe 
                         src={file.url.replace('/view', '/preview')} 
@@ -106,10 +127,14 @@ export default async function ItaDetailPage({ params }: { params: { id: string }
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> 
             </section>
           ))}
-        </div>
+        </div> */ }
+        
+        
+        
+        
       </div>
     </main>
   );

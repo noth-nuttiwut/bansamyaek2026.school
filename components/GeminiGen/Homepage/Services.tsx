@@ -1,11 +1,12 @@
 import { Facebook, Camera, Newspaper, Globe, Mail, Monitor } from 'lucide-react';
+import Link from 'next/link';
 
 const services = [
   { 
     title: "FB: bansamyeak", 
     desc: "ติดตามข่าวสารผ่าน Facebook", 
     icon: <Facebook className="w-8 h-8 text-blue-600" />,
-    link: "#",
+    link: "https://www.facebook.com/bansamyaek.school",
     color: "hover:border-blue-200"
   },
   { 
@@ -19,7 +20,7 @@ const services = [
     title: "ข่าวสารบ้านสามแยก", 
     desc: "วารสารและข่าวประชาสัมพันธ์", 
     icon: <Newspaper className="w-8 h-8 text-emerald-600" />,
-    link: "#",
+    link: "/ita/O7",
     color: "hover:border-emerald-200"
   },
 ];
@@ -35,7 +36,7 @@ const QuickServices = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <a 
+            <Link 
               key={idx} 
               href={service.link}
               target="_blank"
@@ -58,7 +59,7 @@ const QuickServices = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

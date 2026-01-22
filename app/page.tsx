@@ -8,10 +8,10 @@ import Services from '@/components/GeminiGen/Homepage/Services';
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#FFFDF9]">
+      <Activities />
       <Hero />
       <Director />
       <Departments />
-      <Activities />
       <VideoAndLocation />
       <Services />
     </main>

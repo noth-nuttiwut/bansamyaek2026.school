@@ -15,7 +15,7 @@ export default async function ItaPage() {
 
       <div className="max-w-7xl mx-auto px-6 py-6">
         <header className="mb-12 text-center lg:text-left">
-          <h2 className="text-4xl font-black text-gray-900 mb-4">แบบตรวจการเปิดเผยข้อมูลสาธารณะ (Open Data Integrity and Transparency Assessment: OIT)</h2>
+          <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">แบบตรวจการเปิดเผยข้อมูลสาธารณะ (Open Data Integrity and Transparency Assessment: OIT)</h2>
           <div className="w-24 h-2 bg-orange-500 rounded-full mx-auto lg:mx-0"></div>
         </header>
 

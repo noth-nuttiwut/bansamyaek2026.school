@@ -8,3 +8,7 @@ export interface ITAGroup {
   folder_name: string; // เช่น "O1", "O25"
   files: ITAFile[];
 }
+
+export interface ActivityHeroProps {
+  images: { src: string; alt: string; title: string; date: string }[];
+}
