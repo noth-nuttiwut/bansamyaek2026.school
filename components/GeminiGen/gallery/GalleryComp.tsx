@@ -3,7 +3,7 @@ import React, { useState, useMemo } from 'react';
 import { ImageIcon, FolderOpen, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Image from 'next/image';
 import { getDisplayUrl } from '@/libs/utils';
-import ImageCard from '@/components/GeminiGen/Gallery/ImageCard';
+import ImageCard from '@/components/GeminiGen/ImageCard';
 
 interface GalleryFile {
   file_name: string;

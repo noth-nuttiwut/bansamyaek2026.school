@@ -79,8 +79,6 @@ export default async function DepartmentStaff() {
     return <div>Loading...</div>;
   }
   
-  console.log(staffs);
-  
   return (
     <section className="py-24 max-w-7xl mx-auto px-6 space-y-20">
       {deptsInfo.map((dept, idx) => (
