@@ -7,9 +7,9 @@ export default function ItaDetailContent({ group }: { group: any }) {
   const [selectedFile, setSelectedFile] = useState(group.files[0]);
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8">
+    <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
       {/* ฝั่งซ้าย: เมนูเลือกไฟล์ (รวดเร็วมากเพราะเป็น Client State) */}
-      <div className="lg:w-1/3 space-y-3 h-[50vh] overflow-y-auto">
+      <div className="lg:w-1/3 space-y-3 h-[30vh] md:h-[25vh] lg:h-[50vh] overflow-y-auto">
         {group.files.reverse().map((file: any, index: number) => (
           <button 
             key={"fpreview_" + index + file.name}

@@ -5,13 +5,34 @@ import type { Viewport } from 'next'
 import Header from '@/components/GeminiGen/Header'
 import Footer from '@/components/GeminiGen/Footer'
 
+
 export const metadata: Metadata = {
-  title: 'โรงเรียนบ้านสามแยก | Bansamyaek School',
-  description: '40 หมู่ 5 ตำบล ท่าบุญมี อำเภอ เกาะจันทร์ จังหวัด ชลบุรี 20240 เขตพื้นที่การศึกษา ที่ 2',
-  icons: {
-    icon: '/favicon.ico',
+  title: {
+    default: "โรงเรียนบ้านสามแยก | Bansamyaek School",
+    template: "%s | โรงเรียนบ้านสามแยก"
   },
-}
+  description: "โรงเรียนบ้านสามแยก จัดการศึกษาอย่างมีคุณภาพ พัฒนาผู้เรียนตามมาตรฐานสากล บนพื้นฐานความเป็นไทย จ.ชลบุรี",
+  keywords: ["โรงเรียนบ้านสามแยก", "Bansamyaek School", "โรงเรียนชลบุรี", "การศึกษาออนไลน์"],
+  authors: [{ name: "Bansamyaek School" }],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "th_TH",
+    url: "https://bansamyaek2026-school.vercel.app/",
+    siteName: "โรงเรียนบ้านสามแยก",
+    images: [
+      {
+        url: "/logo.png", // แนะนำให้สร้างรูปขนาด 1200x630 เป็นรูปหน้าโรงเรียนสวยๆ ไว้ที่นี่ครับ
+        width: 1200,
+        height: 630,
+        alt: "โรงเรียนบ้านสามแยก",
+      },
+    ],
+  },
+};
  
 export const viewport: Viewport = {
   width: 'device-width',

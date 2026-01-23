@@ -3,6 +3,7 @@ import React, { useState, useMemo } from 'react';
 import { ImageIcon, FolderOpen, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Image from 'next/image';
 import { getDisplayUrl } from '@/libs/utils';
+import ImageCard from '@/components/GeminiGen/Gallery/ImageCard';
 
 interface GalleryFile {
   file_name: string;
@@ -77,51 +78,71 @@ export default function GalleryComp({ folderData }: GalleryProps) {
         {/* Image Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {currentFiles.map((file, idx: number) => (
-            <div
-              key={idx}
-              onClick={() => setSelectedImage({ ...file, index: idx })}
-              className="group relative aspect-square bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer border border-white"
-            >
-              <Image
-                src={getDisplayUrl(file.url)}
-                alt={file.file_name}
-                width={300}
-                height={300}
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <p className="text-white text-sm truncate">{file.file_name}</p>
-              </div>
-            </div>
+            <ImageCard 
+                  key={idx}
+                  src={getDisplayUrl(file.url)}
+                  alt={file.file_name}
+                  onClick={() => setSelectedImage({ ...file, index: idx })}
+                />
           ))}
         </div>
       </div>
   
       {/* Lightbox (ขยายภาพใหญ่) */}
       {selectedImage && (
-        <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4">
-          <button
+        <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 select-none">
+          
+          {/* ปุ่มปิด */}
+          <button 
             onClick={() => setSelectedImage(null)}
-            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-[110]"
           >
             <X size={40} />
           </button>
-  
-          <Image
-            src={getDisplayUrl(selectedImage.url)}
-            alt={selectedImage.file_name}
-            width={2048}
-            height={1080}
-            
-            referrerPolicy="no-referrer"
-            className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-300"
-          />
-  
-          <div className="absolute bottom-10 text-center text-white">
-            <h3 className="text-xl font-semibold">{selectedImage.file_name}</h3>
-            <p className="text-white/60">หมวดหมู่: {activeFolder}</p>
+      
+          {/* ปุ่มภาพก่อนหน้า (Previous) */}
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              const newIndex = (selectedImage.index - 1 + currentFiles.length) % currentFiles.length;
+              setSelectedImage({ ...currentFiles[newIndex], index: newIndex });
+            }}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full transition-all backdrop-blur-md z-[110] border border-white/10"
+          >
+            <ChevronLeft size={32} />
+          </button>
+      
+          {/* รูปภาพหลัก */}
+          <div className="relative w-full h-full flex items-center justify-center p-4 md:p-12">
+            <Image
+              key={selectedImage.url} // ใส่ key เพื่อให้เกิด animation ตอนเปลี่ยนรูป
+              src={getDisplayUrl(selectedImage.url)}
+              alt={selectedImage.file_name}
+              width={1920}
+              height={1080}
+              referrerPolicy="no-referrer"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-in fade-in zoom-in-95 duration-300"
+            />
+          </div>
+      
+          {/* ปุ่มภาพถัดไป (Next) */}
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              const newIndex = (selectedImage.index + 1) % currentFiles.length;
+              setSelectedImage({ ...currentFiles[newIndex], index: newIndex });
+            }}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-4 rounded-full transition-all backdrop-blur-md z-[110] border border-white/10"
+          >
+            <ChevronRight size={32} />
+          </button>
+      
+          {/* ข้อมูลรูปภาพด้านล่าง */}
+          <div className="absolute bottom-8 text-center text-white bg-black/40 px-6 py-3 rounded-2xl backdrop-blur-md border border-white/10">
+            <h3 className="text-lg font-bold font-kanit">{selectedImage.file_name}</h3>
+            <p className="text-white/50 text-sm">
+              ภาพที่ {selectedImage.index + 1} จาก {currentFiles.length} ในหมวด {activeFolder}
+            </p>
           </div>
         </div>
       )}

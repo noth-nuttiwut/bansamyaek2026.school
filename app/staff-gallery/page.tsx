@@ -32,6 +32,7 @@ export default async function SGPage() {
             alt="All Staff"
             width={2048}
             height={1080}
+            loading="lazy"
             className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
           />
           {/* Overlay ตกแต่งจางๆ */}

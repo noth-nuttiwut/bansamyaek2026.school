@@ -13,7 +13,7 @@ export default function O18Page() {
               O18
             </div>
             <h1 className="text-3xl lg:text-4xl font-black text-gray-900 leading-tight">
-              Social Network
+              E-Service
             </h1>
           </div>
           <Link href="/ita" className="text-orange-600 font-bold hover:underline flex items-center gap-2 whitespace-nowrap">
@@ -40,6 +40,7 @@ export default function O18Page() {
             { title: 'E-Learning', desc: 'ระบบการเรียนการสอนออนไลน์', icon: '📜', color: 'bg-amber-500', url: "/e-learning"},
           ].map((service, idx) => (
             <div key={idx} className="group bg-white p-8 rounded-[2.5rem] border border-stone-100 hover:border-orange-500 hover:shadow-2xl transition-all flex items-center gap-6">
+              <Link href={service.url} target="_blank">
               <div className={`w-16 h-16 ${service.color} text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg`}>
                 {service.icon}
               </div>
@@ -47,8 +48,10 @@ export default function O18Page() {
                 <h4 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors">{service.title}</h4>
                 <p className="text-sm text-gray-500">{service.desc}</p>
               </div>
-              <Link href={service.url}><div className="text-orange-600 font-black opacity-0 group-hover:opacity-100 transition-opacity">➔</div></Link>
+              <div className="text-orange-600 font-black opacity-0 group-hover:opacity-100 transition-opacity">➔</div>
+              </Link>
             </div>
+            
           ))}
         </div>
       </section>

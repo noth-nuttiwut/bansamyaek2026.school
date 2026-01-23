@@ -27,6 +27,7 @@ const AboutPage = () => {
               alt="ตราสัญลักษณ์โรงเรียน" 
               className="object-contain"
               fill
+              loading="lazy"
             />
           </div>
           <div className="text-center md:text-left">
@@ -77,7 +78,7 @@ const AboutPage = () => {
                target="_blank"
                className="inline-flex items-center justify-center px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-orange-600 transition-colors gap-2 font-medium"
              >
-               ดาวน์โหลดเอกสาร
+               เปิดดูไฟล์ PDF
              </a>
           </div>
         </div>

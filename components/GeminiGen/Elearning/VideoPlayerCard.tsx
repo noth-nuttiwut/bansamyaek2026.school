@@ -7,6 +7,7 @@ import { getEmbedUrl } from '@/libs/utils';
 import Link from 'next/link';
 
 
+
 export interface subjectVideoProps {
   subjectData: ElearningSubject;
 }

@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { getAllStaffImages } from '@/libs/getGoogleDriveData';
 import { getDisplayUrl, cleanFileName } from '@/libs/utils';
 import { ITAGroup } from '@/types/ita';
+import { Metadata } from 'next';
 
 const dept_en_th = {
   "academic-affairs-administration": "งานวิชาการ",
@@ -12,6 +13,22 @@ const dept_en_th = {
   "personnel-administration": "งานบุคลากร",
   "general-administration": "งานบริหารทั่วไป"
 };
+
+export async function generateMetadata({ params }: { params: { dept: string } }): Promise<Metadata> {
+  const { dept } = await params;
+  const deptName = dept_en_th[dept as keyof typeof dept_en_th] || "บุคลากร";
+  
+  return {
+    title: `ทำเนียบบุคลากร ${deptName} | โรงเรียนบ้านสามแยก`,
+    description: `ข้อมูลบุคลากรและคณะครูในส่วนงาน ${deptName} โรงเรียนบ้านสามแยก จัดการศึกษาอย่างมีคุณภาพ`,
+    openGraph: {
+      title: `ทำเนียบบุคลากร ${deptName} - โรงเรียนบ้านสามแยก`,
+      description: `ทำความรู้จักคณะครูและบุคลากร ${deptName} ของเรา`,
+      images: ['@/public/logo.png'], // หรือจะใช้รูปหัวหน้างานเป็นรูปพรีวิวก็ได้ครับ
+    },
+  };
+}
+
 
 export async function generateStaticParams() {
   const allData = await getAllStaffImages();
@@ -91,6 +108,7 @@ export default async function StaffDeptPage({ params } : { params: { dept: strin
                      className="object-cover object-top" // object-top ช่วยให้เน้นใบหน้า (ส่วนบนของภาพ)
                      referrerPolicy="no-referrer"
                      sizes="(max-width: 768px) 256px, 320px"
+                     loading="lazy"
                    />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-orange-600 text-white p-5 rounded-3xl shadow-xl">
@@ -132,6 +150,7 @@ export default async function StaffDeptPage({ params } : { params: { dept: strin
                      className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                      referrerPolicy="no-referrer"
                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                     loading="lazy"
                    />
                 </div>
                 <div className="text-center pb-2">

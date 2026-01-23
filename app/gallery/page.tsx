@@ -1,6 +1,6 @@
 
 import { getGallerUrls } from '@/libs/getGoogleDriveData';
-import GalleryComp from '@/components/GeminiGen/gallery/GalleryComp';
+import GalleryComp from '@/components/GeminiGen/Gallery/GalleryComp';
 
 export default async function GalleryPage() {
   // ข้อมูลจาก Google App Script ของคุณ

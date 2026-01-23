@@ -1,4 +1,4 @@
-import { Facebook, Camera, Newspaper, Globe, Mail, Monitor } from 'lucide-react';
+import { Facebook, Camera, Newspaper, Globe, Mail, Monitor, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import { SITE_CONFIG } from '@/libs/siteConfig';
 
@@ -22,6 +22,13 @@ const services = [
     desc: "วารสารและข่าวประชาสัมพันธ์", 
     icon: <Newspaper className="w-8 h-8 text-emerald-600" />,
     link: "/ita/O7",
+    color: "hover:border-emerald-200"
+  },
+  { 
+    title: "E-service", 
+    desc: "ห้องเรียนออนไลน์", 
+    icon: <BookOpen className="w-8 h-8 text-amber-600" />,
+    link: "/e-learning",
     color: "hover:border-emerald-200"
   },
 ];

@@ -23,6 +23,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     title: `${id} ${title} | ITA โรงเรียนบ้านสามแยก เกาะจันทร์`,
     description: `แบบตรวจการเปิดเผยข้อมูลสาธารณะ (OIT) หัวข้อ ${id} ${title} ของโรงเรียนบ้านสามแยก เกาะจันทร์`,
     openGraph: {
+      title: `${id} ${title} | ITA โรงเรียนบ้านสามแยก เกาะจันทร์`,
+      description: `แบบตรวจการเปิดเผยข้อมูลสาธารณะ (OIT) หัวข้อ ${id} ${title} ของโรงเรียนบ้านสามแยก`,
       images: [`@/public/ITABanner/B-${id}.jpg`], // ใช้ภาพ Banner ของแต่ละข้อเป็นรูป Preview เวลาแชร์
     },
   };

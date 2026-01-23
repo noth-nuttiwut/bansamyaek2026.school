@@ -26,6 +26,7 @@ export default async function Director() {
                className="object-cover object-top" // object-top ช่วยให้เน้นใบหน้า (ส่วนบนของภาพ)
                referrerPolicy="no-referrer"
                sizes="(max-width: 768px) 256px, 320px"
+               loading="lazy"
              />
           </div>
           <div className="text-center lg:text-left">

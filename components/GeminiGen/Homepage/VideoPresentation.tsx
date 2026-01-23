@@ -10,7 +10,7 @@ export default function VideoPresentation() {
       <div className="aspect-video rounded-3xl overflow-hidden shadow-xl border-4 border-white">
         <iframe
           className="w-full h-full"
-          src="https://www.youtube.com/embed/3qXQ8YKVGqc"
+          src="https://www.youtube.com/embed/c7u-j6fPDws"
           frameBorder="0"
           allowFullScreen={false}
         ></iframe>
