@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { getBoardImage } from "@/libs/getGoogleDriveData";
-// import { GalleryComp } from "@/components/GeminiGen/gallery/GalleryComp";
+import ImageCard from "@/components/GeminiGen/ImageCard";
 import { ImageInfo } from "@/types/ita";
 import { getDisplayUrl } from "@/libs/utils";
 

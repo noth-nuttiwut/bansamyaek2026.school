@@ -1,9 +1,8 @@
 
 import { getGallerUrls } from '@/libs/getGoogleDriveData';
-import GalleryComp from '@/components/GeminiGen/Gallery/GalleryComp';
+import GalleryViewer from '@/components/GeminiGen/GalleryPage/GalleryViewer';
 
 export default async function GalleryPage() {
-  // ข้อมูลจาก Google App Script ของคุณ
   const folderData = await getGallerUrls();
   
   if (!folderData || folderData.length === 0) {
@@ -12,7 +11,7 @@ export default async function GalleryPage() {
 
   return (
     <>
-      <GalleryComp folderData={folderData} />
+      <GalleryViewer folderData={folderData} />
     </>
   );
 }

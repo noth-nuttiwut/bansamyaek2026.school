@@ -25,9 +25,7 @@ interface SelectedImage extends GalleryFile {
   index: number;
 }
 
-export default function GalleryComp({ folderData }: GalleryProps) {
-  
-  
+export default function GalleryViewer({ folderData }: GalleryProps) {
   if (!folderData || folderData.length === 0) {
     return <div>No data available</div>;
   }
