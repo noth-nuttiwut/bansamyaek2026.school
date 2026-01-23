@@ -92,14 +92,14 @@ export default function HeroCarousel({ data }: { data: ITAGroup[] }) {
                 transition={{ delay: 0.5 }}
                 className="max-w-2xl"
               >
-                <div className="flex items-center gap-2 text-orange-400 mb-4 bg-orange-400/10 w-fit px-4 py-1 rounded-full border border-orange-400/20 backdrop-blur-md">
+                {/*<div className="flex items-center gap-2 text-orange-400 mb-4 bg-orange-400/10 w-fit px-4 py-1 rounded-full border border-orange-400/20 backdrop-blur-md">
                   <Camera size={16} />
                   <span className="text-xs font-bold uppercase tracking-widest">ภาพกิจกรรมล่าสุด</span>
                 </div>
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-4 font-kanit drop-shadow-2xl">
                   {images[currentIndex].file_name.replace('.jpg', '').replace('.png', '')}
                 </h2>
-                <div className="h-1.5 w-24 bg-orange-600 rounded-full mb-6" />
+                <div className="h-1.5 w-24 bg-orange-600 rounded-full mb-6" />*/}
               </motion.div>
             </div>
           </div>
