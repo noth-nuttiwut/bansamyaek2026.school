@@ -1,12 +1,11 @@
-import { getRewardUrls } from '@/libs/getGoogleDriveData';
-// import ActivityCarousel from '@/components/GeminiGen/Homepage/ActivityCarousel';
+import { getAwardsUrls } from '@/libs/getGoogleDriveData';
 import { transformItaToHero } from '@/libs/utils';
-import ActivityHero from '@/components/GeminiGen/Homepage/ActivityHero';
+import AwardsHero from '@/components/GeminiGen/Homepage/AwardsHero';
 import Image from 'next/image';
 
 
-export default async function Activity() {
-  const allData = await getRewardUrls();
+export default async function Awards() {
+  const allData = await getAwardsUrls();
   if (!allData) return <div></div>;
   
   // สมมติว่าเก็บรูปกิจกรรมไว้ในหมวด O9 (หรือหมวดที่คุณกำหนด)
@@ -18,7 +17,7 @@ export default async function Activity() {
   return (
     <main>
       {heroImages.length > 0 ? (
-        <ActivityHero images={heroImages} />
+        <AwardsHero images={heroImages} />
       ) : (
         <div className="h-[400px] flex items-center justify-center bg-stone-100 italic text-stone-400">
           กำลังโหลดรูปภาพกิจกรรม...

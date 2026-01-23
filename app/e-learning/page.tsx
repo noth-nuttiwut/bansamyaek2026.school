@@ -40,6 +40,25 @@ export default async function ELearningDashboard() {
       </header>
 
       <div className="max-w-7xl mx-auto px-6 -mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Link key="นวัตกรรมและเทคโนโลยี-1" href={`/e-learning/flowchart`}>
+          <div className="group bg-white p-8 rounded-[2.5rem] shadow-xl shadow-orange-900/5 border border-orange-50 hover:-translate-y-2 transition-all duration-500 cursor-pointer">
+            <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-500">
+              <Book size={32} />
+            </div>
+            <h3 className="text-2xl font-black text-gray-800 font-kanit"> นวัตกรรมและเทคโนโลยี </h3>
+            <p className="text-gray-400 mt-2 font-bold uppercase tracking-tighter">
+              1 บทเรียนที่พร้อมเรียนรู้
+            </p>
+            <div className="mt-8 flex items-center justify-between text-orange-600 font-bold">
+              <span>เข้าสู่บทเรียน</span>
+              <div className="w-10 h-10 rounded-full border-2 border-orange-100 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white group-hover:border-orange-600 transition-all">
+                <ChevronRight size={20} />
+              </div>
+            </div>
+          </div>
+        </Link>
+        
+        
         {data.map((item) => (
           <Link key={item.subject} href={`/e-learning/${encodeURIComponent(item.subject)}`}>
             <div className="group bg-white p-8 rounded-[2.5rem] shadow-xl shadow-orange-900/5 border border-orange-50 hover:-translate-y-2 transition-all duration-500 cursor-pointer">

@@ -2,9 +2,13 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, Calendar, Info } from 'lucide-react';
-import {ActivityHeroProps} from '@/types/ita';
 
-const ActivityHero = ({ images }: ActivityHeroProps) => {
+export interface AwardsHeroProps {
+  images: { src: string; alt: string; title: string; date: string }[];
+}
+
+
+const AwardsHero = ({ images }: AwardsHeroProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // สลับภาพอัตโนมัติทุก 6 วินาที
@@ -24,7 +28,7 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
   };
 
   return (
-    <section className="relative w-full h-[40vh] lg:h-[50vh] overflow-hidden bg-gradient-to-b from-orange-50 to-orange-100">
+    <section className="relative w-full h-[40vh] lg:h-[50vh] overflow-hidden bg-gradient-to-b from-orange-50 via-amber-300 via-amber-200 to-orange-50">
       {/* 🖼️ ภาพพื้นหลัง (Main Image) */}
       {images.map((img, index) => (
         <div
@@ -39,12 +43,11 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
             fill={true}
             sizes="100vw"
             referrerPolicy="no-referrer"
-            className={`object-contain transition-transform duration-[6000ms] ease-out 
+            className={`object-contain transition-transform duration-[6500ms] ease-out 
                   ${index === currentIndex ? "scale-100" : "scale-110"}
                   bg-black/10 object-center`}
           />
-          {/* Overlay ป้องกันภาพจ้าและทำให้ข้อความชัด */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
         </div>
       ))}
 
@@ -56,16 +59,6 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
               <Calendar size={18} />
               <span>{images[currentIndex].date}</span>
             </div>
-            
-            {/*<h2 className="text-4xl lg:text-7xl font-black text-white leading-tight max-w-4xl drop-shadow-2xl">
-              {images[currentIndex].title}
-            </h2>*/}
-            {/*<div className="flex items-center gap-6 mt-4">
-              <button className="px-8 py-4 bg-orange-600 text-white rounded-2xl font-black flex items-center gap-3 hover:bg-orange-700 transition-all shadow-xl shadow-orange-900/20">
-                <Info size={20} />
-                ดูรายละเอียดกิจกรรม
-              </button>
-            </div>*/}
           </div>
         </div>
       </div>
@@ -104,4 +97,4 @@ const ActivityHero = ({ images }: ActivityHeroProps) => {
   );
 };
 
-export default ActivityHero;
+export default AwardsHero;

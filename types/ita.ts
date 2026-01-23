@@ -28,6 +28,3 @@ export interface ITAGroup {
   files: ITAFile[];
 }
 
-export interface ActivityHeroProps {
-  images: { src: string; alt: string; title: string; date: string }[];
-}

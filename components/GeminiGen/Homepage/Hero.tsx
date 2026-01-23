@@ -1,52 +1,39 @@
-// import Image from 'next/image';
-// import ItaAndMember from '@/public/Banner-ITA.jpg'
+import { BookOpen, DollarSign, Users, Home, ArrowRight } from "lucide-react"; // อย่าลืมลง lucide-react
+import Link from "next/link";
 
-// export default function Hero() {
-//   return (
-//     <section className="py-16 lg:py-28 overflow-hidden">
-//       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-//         <div className="relative z-10">
-//           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-orange-700 text-xs font-bold mb-8">
-//             <span className="flex h-2 w-2 rounded-full bg-orange-500 animate-pulse"></span>
-//             ยินดีต้อนรับสู่รั้วบ้านสามแยก
-//           </div>
-//           <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 mb-8 leading-tight">
-//             สร้างสรรค์ปัญญา <br/>
-//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">
-//               พัฒนาคุณภาพชีวิต
-//             </span>
-//           </h2>
-          
-//           <div className="border-l-4 border-orange-500 pl-6 mb-12">
-//             <p className="text-xl text-gray-600 mb-12 leading-relaxed max-w-xl">
-//                 มุ่งมั่นพัฒนาผู้เรียนให้มีทักษะรอบด้าน ควบคู่ไปกับคุณธรรม เพื่อเติบโตเป็นประชากรที่มีคุณภาพของสังคม
-//             </p>
-//           </div>
+const NewHeroComponent = () => {
+  return (
+    <div className="bg-slate-50">
+      {/* Hero Section */}
+      <section className="relative h-[550px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-amber-900 via-orange-700 via-orange-200 to-orange-50">
+        <div className="relative z-10 text-center px-4 max-w-4xl">
+          <span className="inline-block px-4 py-1.5 mb-6 text-md font-medium tracking-wider text-amber-100 uppercase bg-black/20 rounded-full backdrop-blur-sm border border-white/20">
+            ยินดีต้อนรับสู่รั้วบ้านสามแยก
+          </span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+            ขับเคลื่อนด้วย <br />
+            <span className="text-amber-300">นวัตกรรม</span>{" "}
+            {/* เปลี่ยนสีตัวอักษรเน้นเป็นสีเหลืองอำพัน เพื่อตัดกับส้มเข้ม */}
+          </h1>
+          <p className="text-lg text-amber-50 mb-10 max-w-2xl mx-auto font-light drop-shadow">
+             ทำโรงเรียนให้เหมือนบ้าน ประสานสัมพันธ์ชุมชน ยกระดับผลการเรียนรู้ สู่ทักษะในอนาคต
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/ita/O7">
+              <button className="px-8 py-3 bg-white hover:bg-amber-50 text-orange-700 rounded-xl font-medium transition-all shadow-xl shadow-amber-900/25 flex items-center gap-2">
+                อ่านข่าวประชาสัมพันธ์ <ArrowRight size={18} />
+              </button>
+            </Link>
+            <Link href="/about">
+              <button className="px-8 py-3 bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md rounded-xl font-medium transition-all">
+                เกี่ยวกับเรา
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
 
-//           <div className="flex flex-wrap gap-5">
-//             <button className="bg-orange-600 text-white px-10 py-4 rounded-2xl font-bold shadow-xl shadow-orange-200 hover:bg-orange-700 transition-all">
-//               อ่านข่าวประชาสัมพันธ์
-//             </button>
-//             <button className="bg-white border-2 border-orange-100 text-orange-700 px-10 py-4 rounded-2xl font-bold hover:bg-orange-50 transition-all">
-//               เกี่ยวกับเรา
-//             </button>
-//           </div>
-//         </div>
-        
-//         <div className="relative">
-//           <div className="rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white relative z-10 scale-105">
-//             <Image 
-//               src={ItaAndMember}
-//               alt="School Activity"
-//               width="100%"
-//               height="auto"
-//               className="w-full"
-//               priority
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
+export default NewHeroComponent;

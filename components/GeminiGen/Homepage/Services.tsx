@@ -29,7 +29,7 @@ const services = [
     desc: "ห้องเรียนออนไลน์", 
     icon: <BookOpen className="w-8 h-8 text-amber-600" />,
     link: "/e-learning",
-    color: "hover:border-emerald-200"
+    color: "hover:border-amber-200"
   },
 ];
 

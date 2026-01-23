@@ -16,6 +16,7 @@ export default function FlashPlayerPage() {
 
   useEffect(() => {
     // 1. โหลด Ruffle Script จาก CDN
+    let player: any = null;
     const script = document.createElement("script");
     script.src = "https://unpkg.com/@ruffle-rs/ruffle";
     script.async = true;
@@ -24,7 +25,7 @@ export default function FlashPlayerPage() {
     script.onload = () => {
       try {
         const ruffle = window.RufflePlayer.newest();
-        const player = ruffle.createPlayer();
+        player = ruffle.createPlayer();
         
         if (containerRef.current) {
           containerRef.current.innerHTML = ""; // ล้างข้อมูลเก่า
@@ -33,7 +34,7 @@ export default function FlashPlayerPage() {
           // 2. โหลดไฟล์จากโฟลเดอร์ public
           player.load("/flash-player/ตัวเปิด.swf").then(() => {
             setStatus("โหลดสื่อการสอนสำเร็จ");
-          }).catch((err) => {
+          }).catch((err: any) => {
             setStatus("เกิดข้อผิดพลาดในการโหลดไฟล์ .swf");
             console.error(err);
           });
@@ -43,12 +44,17 @@ export default function FlashPlayerPage() {
           player.style.height = "100%";
           player.style.aspectRatio = "4/3"; // สัดส่วนปกติของไฟล์ Flash เก่า
         }
-      } catch (e) {
+      } catch (e: any) {
         setStatus("Browser ของคุณไม่รองรับการจำลอง Flash");
       }
     };
 
     return () => {
+      if (player) {
+        // พยายามหยุดเสียงภายใน player ก่อนลบ
+        try { player.pause(); } catch(e) {} 
+        player.remove();
+      }
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }

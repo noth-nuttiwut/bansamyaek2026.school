@@ -1,19 +1,20 @@
 
 const ita_data_script_url = "https://script.google.com/macros/s/AKfycbwIVxywlJZz-p0xFc3BSiZyKPkYob3BF7iid5vyByhiyBiGVAg2H_NUd_RE2P_ukzl6/exec"
 const gallery_data_script_url = "https://script.google.com/macros/s/AKfycbwyL7-JVEWUmB49gSc1j91pjfwyhscRpuyxAANYeU73lROAdSwj5XNhhBZobKztEE5C3g/exec"
-const reward_script_url = "https://script.google.com/macros/s/AKfycbzkQ9xlgbM_y2VSfy1gWKRGyWwQloxHTSJ6xV5k7u2x8hhiIhoF8cG2sLEmymQy49tsjg/exec"
+const awards_script_url = "https://script.google.com/macros/s/AKfycbzkQ9xlgbM_y2VSfy1gWKRGyWwQloxHTSJ6xV5k7u2x8hhiIhoF8cG2sLEmymQy49tsjg/exec"
 const board_script_url = "https://script.google.com/macros/s/AKfycbxvCKngK5zq7RwWk4Sn-8T6CovyRZMDPRJiv5HpsNAbzeSm6p85y_4WOfu4RXK5vzRZ/exec"
 const all_staff_script_url = "https://script.google.com/macros/s/AKfycbzolkeXrYA5YGFgjd9sl9sWGSdwIPn5AQWng-o-wOxlYJZ-na_0oRvBdELYOY8k7pUE/exec"
 const e_learning_script_url = "https://script.google.com/macros/s/AKfycbwO97ROWokgf69L18FbWGk37-mOjuOwpPKWrERCzO8reTo2DolsIUCY1r8MnQLBeHnG/exec"
 
 import { ITAGroup, ImageInfo, ElearningSubject } from '@/types/ita';
 
+const REVALIDATE_TIME = 3600;
 
 export async function getELearningData(): Promise<ElearningSubject[]> {
   try {
     const res = await fetch(e_learning_script_url, {
       // ตรวจสอบข้อมูลใหม่ทุก 24 ชั่วโมง เนื่องจากข้อมูลอัปเดตน้อยมาก
-      next: { revalidate: 900 }, 
+      next: { revalidate: REVALIDATE_TIME }, 
       redirect: 'follow',
     });
 
@@ -44,7 +45,7 @@ export async function getAllStaffImages(): Promise<ITAGroup[]> {
   try {
     const res = await fetch(all_staff_script_url, {
       // ตรวจสอบข้อมูลใหม่ทุก 24 ชั่วโมง เนื่องจากข้อมูลอัปเดตน้อยมาก
-      next: { revalidate: 900 }, 
+      next: { revalidate: REVALIDATE_TIME }, 
       redirect: 'follow',
     });
 
@@ -73,7 +74,7 @@ export async function getBoardImage(): Promise<ImageInfo[]> {
   try {
     const res = await fetch(board_script_url, {
       // ตรวจสอบข้อมูลใหม่ทุก 24 ชั่วโมง เนื่องจากข้อมูลอัปเดตน้อยมาก
-      next: { revalidate: 900 }, 
+      next: { revalidate: REVALIDATE_TIME }, 
       redirect: 'follow',
     });
 
@@ -99,11 +100,11 @@ export async function getBoardImage(): Promise<ImageInfo[]> {
 }
 
 
-export async function getRewardUrls(): Promise<ITAGroup[]> {
+export async function getAwardsUrls(): Promise<ITAGroup[]> {
   try {
-    const res = await fetch(reward_script_url, {
+    const res = await fetch(awards_script_url, {
       // ตรวจสอบข้อมูลใหม่ทุก 24 ชั่วโมง เนื่องจากข้อมูลอัปเดตน้อยมาก
-      next: { revalidate: 900 }, 
+      next: { revalidate: REVALIDATE_TIME }, 
       redirect: 'follow',
     });
 
@@ -135,11 +136,11 @@ export async function getRewardUrls(): Promise<ITAGroup[]> {
 }
 
 
-export async function getGallerUrls(): Promise<ITAGroup[]> {
+export async function getGalleryUrls(): Promise<ITAGroup[]> {
   try {
     const res = await fetch(gallery_data_script_url, {
       // ตรวจสอบข้อมูลใหม่ทุก 24 ชั่วโมง เนื่องจากข้อมูลอัปเดตน้อยมาก
-      next: { revalidate: 900 }, 
+      next: { revalidate: REVALIDATE_TIME }, 
       redirect: 'follow',
     });
 
@@ -173,7 +174,7 @@ export async function getItaData(): Promise<ITAGroup[]> {
   try {
     const res = await fetch(ita_data_script_url, {
       // ตรวจสอบข้อมูลใหม่ทุก 24 ชั่วโมง เนื่องจากข้อมูลอัปเดตน้อยมาก
-      next: { revalidate: 900 }, 
+      next: { revalidate: REVALIDATE_TIME }, 
       redirect: 'follow',
     });
 
