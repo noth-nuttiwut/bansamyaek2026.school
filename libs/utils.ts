@@ -48,18 +48,16 @@ export const cleanFileName = (fileName: string) => {
 
 // ปรับปรุงใน lib/utils.ts
 export const transformItaToHero = (files: ITAFile[]) => {
+  
   // กรองเฉพาะไฟล์ที่เป็นรูปภาพ (png, jpg, jpeg)
-  const imageFiles = files.filter(file => 
+  const imageFiles = files?.filter(file => 
     /\.(jpg|jpeg|png|webp|avif)$/i.test(file.file_name)
   );
 
   return imageFiles.map((file) => {
     // ดึงเฉพาะ ID ของไฟล์ออกมาจาก URL
     const fileId = file.url.match(/[-\w]{25,}/); 
-    
-    // ใช้ URL รูปแบบที่เสถียรที่สุดสำหรับ Google Drive
-    // const directUrl = fileId ? `https://drive.google.com/uc?export=view&id=${fileId[0]}` : file.url;
-    // 
+
     const directUrl = getDisplayUrl(file.url)
     
     return {

@@ -8,7 +8,7 @@ const e_learning_script_url = "https://script.google.com/macros/s/AKfycbwO97ROWo
 
 import { ITAGroup, ImageInfo, ElearningSubject } from '@/types/ita';
 
-const REVALIDATE_TIME = 3600;
+const REVALIDATE_TIME = 600;
 
 export async function getELearningData(): Promise<ElearningSubject[]> {
   try {
