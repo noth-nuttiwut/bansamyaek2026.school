@@ -1,6 +1,6 @@
 {
   "name": "bansamyaek.school-nextjs-16",
-  "version": "1.0.0b",
+  "version": "1.0.1b",
   "private": true,
   "scripts": {
     "dev": "next dev",

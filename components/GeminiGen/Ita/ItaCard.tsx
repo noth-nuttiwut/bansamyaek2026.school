@@ -12,7 +12,7 @@ interface ItaCardProps {
 const ItaCard = ({ item, colorClass }: ItaCardProps) => {
   return (
     <Link href={`/ita/${item.id}`} className="group relative block">
-      <div className="ita-card relative p-10 rounded-[3rem] bg-white border border-stone-100 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl hover:border-orange-100 flex flex-col h-full">
+      <div className="ita-card relative p-10 rounded-[3rem] bg-white border border-stone-200 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:shadow-2xl hover:border-orange-100 flex flex-col h-full">
         
         {/* Badge รหัส Ox ที่มุมขวาบน */}
         <div className={`absolute -top-4 -right-4 w-14 h-14 ${colorClass} text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg transform transition-transform group-hover:scale-110 group-hover:rotate-3`}>

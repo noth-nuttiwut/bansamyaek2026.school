@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function O28Page() {
   return (
-    <main className="min-h-[60vh] bg-[#FDFBF7]">
+    <main className="min-h-[70vh] bg-[#FDFBF7]">
       <div className="max-w-5xl mx-auto px-6 mt-12">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-orange-100 pb-8">
           <div>

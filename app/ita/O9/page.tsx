@@ -10,7 +10,7 @@ export default function O9Page() {
     { name: 'FB สพป.ชลบุรี เขต2',　url: SITE_CONFIG.social.fbChon2, color: 'bg-[#1877F2]', icon: 'f', desc: 'ติดตามข่าวสารและกิจกรรมรายวัน' },
   ];
   return (
-    <main className="min-h-[60vh] bg-[#FDFBF7]">
+    <main className="min-h-[80vh] bg-[#FDFBF7]">
       <div className="max-w-5xl mx-auto px-6 mt-12">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-orange-100 pb-8">
           <div>
@@ -26,7 +26,7 @@ export default function O9Page() {
           </Link>
         </div>
       </div>
-      <section className="flex flex-col gap-8 justify-center items-center">
+      <section className="flex flex-col gap-8 justify-center items-center p-8">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {
