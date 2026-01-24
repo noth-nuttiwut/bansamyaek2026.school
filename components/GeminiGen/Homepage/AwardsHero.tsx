@@ -41,7 +41,7 @@ const AwardsHero = ({ images }: AwardsHeroProps) => {
             src={img.src}
             alt={img.alt}
             fill={true}
-            sizes="100vw"
+            quality={60}
             referrerPolicy="no-referrer"
             className={`object-contain transition-transform duration-[6500ms] ease-out 
                   ${index === currentIndex ? "scale-100" : "scale-110"}

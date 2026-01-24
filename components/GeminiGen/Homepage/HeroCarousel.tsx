@@ -21,10 +21,10 @@ export default function HeroCarousel({ data }: { data: ITAGroup[] }) {
           allImages = [...allImages, ...folder.files];
         });
 
-        // สุ่มรูป (Shuffle) และตัดมาแค่ 15 รูป
+        // สุ่มรูป (Shuffle) และตัดมาแค่ 12 รูป
         const shuffled = allImages
           .sort(() => 0.5 - Math.random())
-          .slice(0, 10);
+          .slice(0, 12);
 
         setImages(shuffled);
         setLoading(false);
@@ -72,11 +72,10 @@ export default function HeroCarousel({ data }: { data: ITAGroup[] }) {
             <Image
               src={getDisplayUrl(images[currentIndex].url)}
               alt="Bansamyaek Activity"
-              quality={80}
-              fill
+              fill={true}
               className="object-cover opacity-70 object-center"
               referrerPolicy="no-referrer"
-              priority
+              priority={true}
             />
           </motion.div>
 
