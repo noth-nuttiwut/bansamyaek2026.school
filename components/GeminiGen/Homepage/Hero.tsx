@@ -10,19 +10,18 @@ const NewHeroComponent = () => {
           <span className="inline-block px-4 py-1.5 mb-6 text-md font-medium tracking-wider text-amber-100 uppercase bg-black/20 rounded-full backdrop-blur-sm border border-white/20">
             ยินดีต้อนรับสู่รั้วบ้านสามแยก
           </span>
-          {/*<h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             ขับเคลื่อนด้วย <span className="text-amber-300">นวัตกรรม</span> 
           <br/>ทำโรงเรียนให้เหมือน <span className="text-amber-300">บ้าน</span> 
           <br/>ประสานสัมพันธ์ <span className="text-amber-300">ชุมชน</span> 
           <br/>ยกระดับผลการ <span className="text-amber-300">เรียนรู้ </span> 
           <br/>สู่ทักษะใน <span className="text-amber-300">อนาคต</span>
-          </h1>*/}
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+          </h1>
+          {/*<h1 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             ขับเคลื่อนด้วย<span className="text-amber-300">นวัตกรรม</span> 
           <br/>ทำโรงเรียนให้เหมือน<span className="text-amber-300">บ้าน</span>
-          <br/>ประสานสัมพันธ์ชุมชน ยกระดับผลการ<span className="text-amber-300">เรียนรู้</span> 
-          <br/>สู่ทักษะใน<span className="text-amber-300">อนาคต</span>
-          </h1>
+          <br/>ประสานสัมพันธ์ชุมชน ยกระดับผลการ<span className="text-amber-300">เรียนรู้</span><br/>สู่ทักษะใน<span className="text-amber-300">อนาคต</span>
+          </h1>*/}
           <p className="text-lg text-amber-50 mb-10 max-w-2xl mx-auto font-light drop-shadow">
              
           </p>
