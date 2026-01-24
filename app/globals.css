@@ -1,15 +1,6 @@
 @import "tailwindcss";
 
 
-
-body {
-  font-family: 'Sarabun', sans-serif;
-}
-
-h1, h2, h3, .font-kanit {
-  font-family: 'Kanit', sans-serif;
-}
-
 /* สีสดใสแต่สุภาพ */
 .text-brand-primary {
     color: #d97706;

@@ -9,7 +9,7 @@ export default function ItaDetailContent({ group }: { group: any }) {
   return (
     <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
       {/* ฝั่งซ้าย: เมนูเลือกไฟล์ (รวดเร็วมากเพราะเป็น Client State) */}
-      <div className="lg:w-1/3 space-y-3 h-[30vh] md:h-[25vh] lg:h-[50vh] overflow-y-auto">
+      <div className={`lg:w-1/3 space-y-3 ${group.files.length > 4 ? 'h-[30vh]' : 'h-[15vh]'} md:h-[45vh] overflow-y-auto`}>
         {group.files.reverse().map((file: any, index: number) => (
           <button 
             key={"fpreview_" + index + file.name}

@@ -1,18 +1,27 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import type { Viewport } from 'next'
+import { Sarabun } from 'next/font/google'
 
 import Header from '@/components/GeminiGen/Header'
 import Footer from '@/components/GeminiGen/Footer'
 
+const sarabun = Sarabun({
+  subsets: ['thai'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic', ],
+  variable: '--font-sarabun',
+  display: 'swap',
+  preload: true
+})
 
 export const metadata: Metadata = {
   title: {
-    default: "โรงเรียนบ้านสามแยก | Bansamyaek School",
-    template: "%s | โรงเรียนบ้านสามแยก"
+    default: "โรงเรียนบ้านสามแยก อำเภอเกาะจันทร์ | Bansamyaek School",
+    template: "%s | โรงเรียนบ้านสามแยก อำเภอเกาะจันทร์"
   },
-  description: "โรงเรียนบ้านสามแยก จัดการศึกษาอย่างมีคุณภาพ พัฒนาผู้เรียนตามมาตรฐานสากล บนพื้นฐานความเป็นไทย จ.ชลบุรี",
-  keywords: ["โรงเรียนบ้านสามแยก", "Bansamyaek School", "โรงเรียนชลบุรี", "การศึกษาออนไลน์"],
+  description: "โรงเรียนบ้านสามแยก อำเภอเกาะจันทร์ จ.ชลบุรี ขับเคลื่อนด้วยนวัตกรรม ทำโรงเรียนให้เหมือนบ้าน ประสานสัมพันธ์ชุมชน ยกระดับผลการเรียนรู้ สู่ทักษะในอนาคต",
+  keywords: ["โรงเรียนบ้านสามแยก อำเภอเกาะจันทร์์", "Bansamyaek School", "โรงเรียนชลบุรี", "การศึกษาออนไลน์"],
   authors: [{ name: "Bansamyaek School" }],
   icons: {
     icon: "/favicon.ico",
@@ -22,13 +31,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "th_TH",
     url: "https://bansamyaek2026-school.vercel.app/",
-    siteName: "โรงเรียนบ้านสามแยก",
+    siteName: "โรงเรียนบ้านสามแยก อำเภอเกาะจันทร์",
     images: [
       {
-        url: "/logo.png", // แนะนำให้สร้างรูปขนาด 1200x630 เป็นรูปหน้าโรงเรียนสวยๆ ไว้ที่นี่ครับ
+        url: "/logo.png", 
         width: 1200,
         height: 630,
-        alt: "โรงเรียนบ้านสามแยก",
+        alt: "โรงเรียนบ้านสามแยก อำเภอเกาะจันทร์",
       },
     ],
   },
@@ -48,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="th">
-      <body className="text-gray-800">
+      <body className="text-gray-800" style={{ fontFamily: sarabun.style.fontFamily }}>
         <Header />
         <main>
           {children}

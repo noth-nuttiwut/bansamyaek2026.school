@@ -1,25 +1,5 @@
 import { ITAFile } from '@/types/ita';
 
-/**
- * แปลงข้อมูลจาก ITAFile ให้เป็นรูปแบบที่ ActivityHero ต้องการ
- * พร้อมจัดการ URL ของ Google Drive ให้แสดงผลเป็นรูปภาพได้
- */
-// export const transformItaToHero = (files: ITAFile[]) => {
-//   return files.map((file) => {
-//     // แปลง Google Drive Link จาก /view เป็น /uc เพื่อให้ดึงไฟล์ภาพมาแสดงได้โดยตรง
-//     const directUrl = file.url
-//       .replace('/file/d/', '/uc?id=')
-//       .replace('/view?usp=sharing', '')
-//       .replace('/view', '');
-
-//     return {
-//       src: directUrl,
-//       alt: file.file_name,
-//       title: file.file_name.replace('.jpg', '').replace('.png', ''), // ตัดนามสกุลไฟล์ออกเพื่อความสวยงาม
-//       date: "กิจกรรมโรงเรียนบ้านสามแยก", // หรือจะดึงจาก folder_name ถ้ามีระบุวันที่
-//     };
-//   });
-// };
 
 // ฟังก์ชันแปลง URL Google Drive ให้แสดงผลได้ (ใช้เทคนิค no-referrer)
 export const getDisplayUrl = (url : string) => {

@@ -72,7 +72,7 @@ export default function HeroCarousel({ data }: { data: ITAGroup[] }) {
             <Image
               src={getDisplayUrl(images[currentIndex].url)}
               alt="Bansamyaek Activity"
-              fill={true}
+              fill
               className="object-cover opacity-70 object-center"
               referrerPolicy="no-referrer"
               priority={true}

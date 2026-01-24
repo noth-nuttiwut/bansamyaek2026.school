@@ -3,6 +3,7 @@ import { getItaTitle } from '@/libs/constants';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import ItaDetailContent from '@/components/GeminiGen/Ita/ItaDetailContent';
+import type { Metadata } from 'next';
 
 // 1. กำหนดการสร้างหน้า Static ไว้ล่วงหน้า (SSG)
 export async function generateStaticParams() {
@@ -12,7 +13,6 @@ export async function generateStaticParams() {
   }));
 }
 
-import { Metadata } from 'next';
 
 // ฟังก์ชันสำหรับสร้าง Metadata ตามรหัส O
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   const title = getItaTitle(id);
   
   return {
-    title: `${id} ${title} | ITA โรงเรียนบ้านสามแยก เกาะจันทร์`,
-    description: `แบบตรวจการเปิดเผยข้อมูลสาธารณะ (OIT) หัวข้อ ${id} ${title} ของโรงเรียนบ้านสามแยก เกาะจันทร์`,
+    title: `${id} ${title} | ITA โรงเรียนบ้านสามแยก อำเภอเกาะจันทร์`,
+    description: `แบบตรวจการเปิดเผยข้อมูลสาธารณะ (OIT) หัวข้อ ${id} ${title} ของโรงเรียนบ้านสามแยก อำเภอเกาะจันทร์`,
     openGraph: {
-      title: `${id} ${title} | ITA โรงเรียนบ้านสามแยก เกาะจันทร์`,
-      description: `แบบตรวจการเปิดเผยข้อมูลสาธารณะ (OIT) หัวข้อ ${id} ${title} ของโรงเรียนบ้านสามแยก`,
+      title: `${id} ${title} | ITA โรงเรียนบ้านสามแยก อำเภอเกาะจันทร์`,
+      description: `แบบตรวจการเปิดเผยข้อมูลสาธารณะ (OIT) หัวข้อ ${id} ${title} ของโรงเรียนบ้านสามแยก อำเภอเกาะจันทร์`,
       images: [`@/public/ITABanner/B-${id}.jpg`], // ใช้ภาพ Banner ของแต่ละข้อเป็นรูป Preview เวลาแชร์
     },
   };
@@ -87,57 +87,7 @@ export default async function ItaDetailPage({ params }: { params: { id: string }
         
         <ItaDetailContent group={group} />
         
-        {/*  📄 แสดงผลไฟล์ตามกลุ่มย่อย (Sub-groups) 
-         <div className="space-y-16">
-          {Object.entries(filesBySubGroup).map(([subName, files], idx) => (
-            <section key={idx} className="space-y-8">
-              // ชื่อกลุ่มย่อย (ถ้ามีหลายกลุ่ม) 
-              {Object.keys(filesBySubGroup).length > 1 && (
-                <div className="flex items-center gap-3">
-                  <span className="w-2 h-8 bg-orange-500 rounded-full"></span>
-                  <h3 className="text-xl font-bold text-gray-800">{subName}</h3>
-                </div>
-              )}
 
-              <div className="grid grid-cols-1 gap-10">
-                {files.map((file, fIdx) => (
-                  <div key={fIdx+99844} className="bg-white rounded-[2.5rem] p-6 lg:p-10 shadow-xl shadow-orange-900/5 border border-stone-100 group">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-                      <h4 className="text-lg font-bold text-gray-800 flex items-center gap-3">
-                        <span className="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all font-black text-xs">
-                          PDF
-                        </span>
-                        {file.file_name}
-                      </h4>
-                      <a 
-                        href={file.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-xs font-black text-orange-600 border-2 border-orange-100 px-4 py-2 rounded-xl hover:bg-orange-600 hover:text-white transition-all uppercase tracking-widest"
-                      >
-                        เปิดใน Google Drive ↗
-                      </a>
-                    </div>
-
-                    // PDF Previewer 
-                    <div className="relative w-full pt-[141.42%] rounded-[2rem] overflow-hidden border border-stone-200 bg-stone-50 shadow-inner">
-                      <iframe 
-                        src={file.url.replace('/view', '/preview')} 
-                        className="absolute inset-0 w-full h-full"
-                        frameBorder="0"
-                        allow="autoplay"
-                      ></iframe>
-                    </div>
-                  </div>
-                ))}
-              </div> 
-            </section>
-          ))}
-        </div> */ }
-        
-        
-        
-        
       </div>
     </main>
   );

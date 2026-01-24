@@ -40,10 +40,10 @@ const AwardsHero = ({ images }: AwardsHeroProps) => {
           <Image
             src={img.src}
             alt={img.alt}
-            fill={true}
+            fill
             quality={60}
             referrerPolicy="no-referrer"
-            className={`object-contain transition-transform duration-[6500ms] ease-out 
+            className={`object-contain object-center transition-transform duration-[6500ms] ease-out 
                   ${index === currentIndex ? "scale-100" : "scale-110"}
                   bg-black/10 object-center`}
           />
