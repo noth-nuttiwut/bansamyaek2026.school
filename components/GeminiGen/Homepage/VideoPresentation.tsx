@@ -1,3 +1,9 @@
+"use client";
+
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+
+
 export default function VideoPresentation() {
   return (
     <div className="space-y-6 text-center lg:text-left">
@@ -8,12 +14,19 @@ export default function VideoPresentation() {
         วิดีโอแนะนำโรงเรียน
       </h3>
       <div className="aspect-video rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-        <iframe
+        <LiteYouTubeEmbed 
+          id="c7u-j6fPDws" // ใส่ Video ID
+          title="แนะนำโรงเรียน"
+          params="autoplay=0&mute=0"
+          iframeClass='"w-full h-full'
+          
+        />
+        {/*<iframe
           className="w-full h-full"
           src="https://www.youtube.com/embed/c7u-j6fPDws"
           frameBorder="0"
           allowFullScreen={false}
-        ></iframe>
+        ></iframe>*/}
       </div>
     </div>
   );

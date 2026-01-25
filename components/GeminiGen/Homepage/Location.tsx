@@ -8,8 +8,15 @@ export default function Location() {
             ที่ตั้งโรงเรียน
         </h3>
         <div className="aspect-video rounded-3xl overflow-hidden shadow-xl border-4 border-white">
-            <iframe src={SITE_CONFIG.contact.mapUrl}
-            className="w-full h-full border-0" allowFullScreen={false} loading="lazy"></iframe>
+        <iframe
+          src={SITE_CONFIG.contact.mapUrl}
+          width="600"
+          height="450"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="w-full h-full border-0"
+          allowFullScreen={false}
+          loading="lazy">
+          </iframe>
         </div>
     </div>
   )
