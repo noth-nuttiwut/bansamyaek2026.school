@@ -22,8 +22,10 @@ export default async function Director() {
              <Image 
                src={getDisplayUrl(directorData.files[0].url)}
                alt={"ddd__"+cleanFileName(directorData.files[0].file_name)}
-               fill
-               className="object-cover object-top" // object-top ช่วยให้เน้นใบหน้า (ส่วนบนของภาพ)
+               width={400}
+               height={600}
+               quality={75}
+               className="object-cover object-top aspect-[3/4] rounded-[3.5rem]" // object-top ช่วยให้เน้นใบหน้า (ส่วนบนของภาพ)
                referrerPolicy="no-referrer"
                sizes="(max-width: 768px) 256px, 320px"
                loading="lazy"

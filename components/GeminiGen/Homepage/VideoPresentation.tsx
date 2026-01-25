@@ -22,6 +22,7 @@ export default function VideoPresentation() {
           
         />
         {/*<iframe
+          name='Bansamyaek introduce video'
           className="w-full h-full"
           src="https://www.youtube.com/embed/c7u-j6fPDws"
           frameBorder="0"
